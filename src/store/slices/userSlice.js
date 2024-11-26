@@ -92,7 +92,7 @@ export const register = (data) => async (dispatch) => {
   dispatch(userSlice.actions.registerRequest());
   try {
     const response = await axios.post(
-      "http://localhost:4000/api/v1/user/register",
+      "https://job-portalbackend-htvh.onrender.com/api/v1/user/register", // Updated URL
       data,
       {
         withCredentials: true,
@@ -110,7 +110,7 @@ export const login = (data) => async (dispatch) => {
   dispatch(userSlice.actions.loginRequest());
   try {
     const response = await axios.post(
-      "http://localhost:4000/api/v1/user/login",
+      "https://job-portalbackend-htvh.onrender.com/api/v1/user/login", // Updated URL
       data,
       {
         withCredentials: true,
@@ -128,7 +128,7 @@ export const getUser = () => async (dispatch) => {
   dispatch(userSlice.actions.fetchUserRequest());
   try {
     const response = await axios.get(
-      "http://localhost:4000/api/v1/user/getuser",
+      "https://job-portalbackend-htvh.onrender.com/api/v1/user/getuser", // Updated URL
       {
         withCredentials: true,
       }
@@ -139,10 +139,11 @@ export const getUser = () => async (dispatch) => {
     dispatch(userSlice.actions.fetchUserFailed(error.response.data.message));
   }
 };
+
 export const logout = () => async (dispatch) => {
   try {
     const response = await axios.get(
-      "http://localhost:4000/api/v1/user/logout",
+      "https://job-portalbackend-htvh.onrender.com/api/v1/user/logout", // Updated URL
       {
         withCredentials: true,
       }
@@ -152,10 +153,6 @@ export const logout = () => async (dispatch) => {
   } catch (error) {
     dispatch(userSlice.actions.logoutFailed(error.response.data.message));
   }
-};
-
-export const clearAllUserErrors = () => (dispatch) => {
-  dispatch(userSlice.actions.clearAllErrors());
 };
 
 export default userSlice.reducer;

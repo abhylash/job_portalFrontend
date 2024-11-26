@@ -47,7 +47,7 @@ export const updateProfile = (data) => async (dispatch) => {
   dispatch(updateProfileSlice.actions.updateProfileRequest());
   try {
     const response = await axios.put(
-      "http://localhost:4000/api/v1/user/update/profile",
+      "https://job-portalbackend-htvh.onrender.com/api/v1/user/update/profile", // Updated URL
       data,
       {
         withCredentials: true,
@@ -63,11 +63,12 @@ export const updateProfile = (data) => async (dispatch) => {
     );
   }
 };
+
 export const updatePassword = (data) => async (dispatch) => {
   dispatch(updateProfileSlice.actions.updatePasswordRequest());
   try {
     const response = await axios.put(
-      "http://localhost:4000/api/v1/user/update/password",
+      "https://job-portalbackend-htvh.onrender.com/api/v1/user/update/password", // Updated URL
       data,
       {
         withCredentials: true,
