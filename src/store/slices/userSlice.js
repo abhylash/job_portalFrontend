@@ -88,6 +88,23 @@ const userSlice = createSlice({
   },
 });
 
+// Export actions from the slice
+export const { 
+  registerRequest,
+  registerSuccess,
+  registerFailed,
+  loginRequest,
+  loginSuccess,
+  loginFailed,
+  fetchUserRequest,
+  fetchUserSuccess,
+  fetchUserFailed,
+  logoutSuccess,
+  logoutFailed,
+  clearAllErrors
+} = userSlice.actions;
+
+// Async actions
 export const register = (data) => async (dispatch) => {
   dispatch(userSlice.actions.registerRequest());
   try {
