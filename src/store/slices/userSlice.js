@@ -77,9 +77,7 @@ const userSlice = createSlice({
       state.error = null;
     },
     logoutFailed(state, action) {
-      state.isAuthenticated = state.isAuthenticated;
-      state.user = state.user;
-      state.error = action.payload;
+      state.error = action.payload;  // Update error message on failure
     },
     clearAllErrors(state) {
       state.error = null;
